@@ -24,6 +24,6 @@ public class TokenizerMain {
         String textDecoded = tokenizer.decode(tokenIds);
         System.out.println("Decoded: " + textDecoded);
 
-        tokenizer.
+        //tokenizer.close();
     }
 }

@@ -1,21 +1,15 @@
 package com.programacion.taller3.embeddings;
 
 import dev.langchain4j.data.embedding.Embedding;
-import dev.langchain4j.model.embedding.onnx.OnnxEmbeddingModel;
-import dev.langchain4j.model.embedding.onnx.PoolingMode;
 import dev.langchain4j.model.output.Response;
 import dev.langchain4j.store.embedding.CosineSimilarity;
 
-import java.nio.file.Paths;
 import java.util.List;
 
 public class BusquedaSemanticaMain {
     static void main(){
 
-        var pathModel = Paths.get("/home/labcom/Documentos/taller 3/02.embeddings/modelos/multilingual-e5-small.onnx");
-        var pathToTokenizer = Paths.get("/home/labcom/Documentos/taller 3/02.embeddings/modelos/multilingual-e5-small.json");
-
-        OnnxEmbeddingModel model = new OnnxEmbeddingModel(pathModel, pathToTokenizer, PoolingMode.MEAN);
+        var model = EmbeddingModelUtil.createModel();
 
         var documentos = List.of(
           "Java es un lenguaje de programación orientada a objetos",
